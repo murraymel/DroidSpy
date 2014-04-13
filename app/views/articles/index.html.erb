@@ -1,0 +1,35 @@
+
+
+<h1>DroidSpy</h1>
+<p> A Platform to Share Information and Watch the Skies for Asteroids.</p>
+
+
+
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7TcpaYv9ElajJ81kHLWnWl7l2VyMcGnPN17E1u2iCCT4PeZgJyg">
+
+
+<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSExnfY6aqULMXBzyEaXE2b9W2HlfVpQanucSa_nFv4ID0950DmMQ">
+
+<h1>Listing Asteroids</h1>
+
+<%= link_to 'New article', new_article_path %>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Destroy', article_path(article),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+    </tr>
+  <% end %>
+</table>
