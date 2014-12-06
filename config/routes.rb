@@ -1,5 +1,7 @@
 DroidSpy::Application.routes.draw do
 
+  resources :photos
+
   resources :articles do
     resources :comments
 
